@@ -25,6 +25,7 @@
 
     <!-- SSH Info -->
     <property name="ssh.username" value="jenkins@fzzl.xyz" />
+    <!-- <property name="ssh.username" value="jenkins" /> -->
     <property name="ssh.keyfile" value="/var/lib/jenkins/.ssh/id_rsa" />
 
     <!-- Exclude files -->
