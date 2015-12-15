@@ -71,7 +71,7 @@
       <arg value="." />
       <arg value="${ssh.username}@${server.dev}:${server.dev.path}/${application.name}" />
       <arg value="--delete-delay" />
-      <arg value="-v">
+      <arg value="-v" />
     </exec>
     <echo message="Sent build to ${server.dev}..." />
   </target>
