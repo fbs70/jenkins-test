@@ -39,41 +39,4 @@
     <echoproperties prefix="server" />
     <echoproperties prefix="ssh" />
   </target>
-
-  <target name="clean-files">
-    <echo>Cleaning files started</echo>
-    <delete dir="${build.dir.location}" />
-    <delete dir="${publish.dir.location}" />
-    <echo>Cleaning files done</echo>
-  </target>
-
-  <target name="clean-mkdir">
-    <echo>CREATE ${build.dir.name}, ${publish.dir.name} DIRECTORIES</echo>
-    <mkdir dir="${build.dir.location}" />
-    <echo>Directories created</echo>
-  </target>
-
-  <target name="copy.files" depends="publish.files">
-    <echo>Copying all files ....</echo>
-    <copy todir="./${publish.dir.name}">
-      <fileset dir="${dir.source}/" exclude="${file.default.exclude}" />
-    </copy>
-    <echo>Copied files are located in ./${publish.dir.name}</echo>
-  </target>
-
-  <target name="move.files">
-    <echo message="Sending files to ${server.dev}" />
-    <echo message="create remote dir ${server.dev.path}/${application.name}"/>
-    <sshexec trust="true" host="${server.dev}" username="${ssh.username}" keyfile="${ssh.keyfile}" command="mkdir -p ${server.dev.path}/${application.name}" />
-    <echo message="Sending build to ${server.dev}..." />
-    <echo message="Update file structure to match repo" />
-    <exec executable="rsync" dir="./publish/" failonerror="true">
-      <arg value="-r" />
-      <arg value="." />
-      <arg value="${ssh.username}@${server.dev}:${server.dev.path}/${application.name}" />
-      <arg value="--delete-delay" />
-      <arg value="-v" />
-    </exec>
-    <echo message="Sent build to ${server.dev}..." />
-  </target>
 </project>
