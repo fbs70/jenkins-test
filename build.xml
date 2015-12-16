@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Jenkins Test" basedir="." default="build.dev">
 
-  <target name="build.dev" depends="init,clean-files,clean-mkdir,copy.files,move.files" />
+  <!-- <target name="build.dev" depends="init,clean-files,clean-mkdir,copy.files,move.files" /> -->
+  <target name="build.dev" depends="init" />
 
   <target name="init">
     <property name="application.name" value="jenkins_test" />
