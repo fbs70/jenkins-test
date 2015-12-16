@@ -30,9 +30,7 @@
     <property name="ssh.keyfile" value="/var/lib/jenkins/.ssh/id_rsa" />
 
     <!-- Exclude files -->
-    <property name="file.default.exclude" value=".gitignore, .projects, README.md" />
-    <!-- ADDITIONAL exclude files -->
-    <property name="build.xml" />
+    <property name="file.default.exclude" value=".gitignore, .projects, README.md, build.xml" />
 
     <!-- DUMP properties -->
     <echoproperties prefix="application" />
